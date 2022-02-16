@@ -113,7 +113,7 @@ bert = RobertaModel.from_pretrained('../input/huggingface-roberta-variants/rober
 model = BERT_Arch(bert)
 # model = torch.nn.DataParallel(model, device_ids=[0])
 model = model.to(device)
-model.load_state_dict(torch.load("../input/finetune-18to24-layers/epoch_20_18to24_1fc_saved_weights.pt", map_location=device_string))
+model.load_state_dict(torch.load("../epoch_20_18to24_1fc_saved_weights.pt", map_location=device_string))
 model.eval()
 
 with torch.no_grad():
